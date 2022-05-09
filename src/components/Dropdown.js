@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import DisplayDropdown from './DisplayDropdown';
 
 const Dropdown = () => {
     const [dropdown, setDropdown] = useState([])
@@ -12,24 +13,25 @@ const Dropdown = () => {
             dataResponse: "json",
         }).then((response) => {
             const responseData = response.data.trivia_categories
-            console.log(responseData)
+            // console.log(responseData)
             setDropdown(responseData)
         })
     }, [])
 
     return (
         <div>
-            <form action="">
-                <h2>test if this works</h2>
-
+            < DisplayDropdown 
+                getCategory={dropdown}
+            />
+            
+            {/* <form action="">
                 <label htmlFor="category">Choose a category</label>
 
                 <select name="category" id="category">
                     <option value="test">test</option>
-                    {/* dynamically populate dropdown */}
-
+                    <option value="">{categoryName}</option>
                 </select>
-            </form>
+            </form> */}
         </div>
     )
 }
