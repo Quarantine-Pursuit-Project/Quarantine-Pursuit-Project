@@ -18,42 +18,63 @@ function QuizCall() {
     })
   }, []);
 
-  // creating a map function to spread incorrect answers into 3 consts
-  // const incorrectArray = questionDetails.map((test) => {
-  //   return(test.incorrect_answers)
+  console.log(questionDetails)
+
+  const correctAnswer = questionDetails.map((test) => {
+    return (test.correct_answer)
+  })
+  console.log(correctAnswer)
+
+  const incorrectAnswers = questionDetails.map((test) => {
+    return {...test.incorrect_answers}
+  })
+  console.log(incorrectAnswers)
+
+  const allAnswers = (correctAnswer, incorrectAnswers) => {
+    for(let i=0; i<9; i++) {
+      correctAnswer.push(incorrectAnswers[i]);
+    }
+    return correctAnswer
+  }
+
+  console.log(allAnswers)
+
+
+  // const allAnswers = incorrectAnswers.map((test) => {
+  //   console.log(test)
+  //   return{...correctAnswer, test}
   // })
 
-  // const incorrectOne = incorrectArray[0]
-  // const incorrectTwo = incorrectArray[1]
-  // const incorrectThree = incorrectArray[2]
+  // console.log(allAnswers)
 
 
-  console.log(questionDetails)
+    
+
+
 
   return (
     <div>
-      {questionDetails.length === 0 ? (<></>)
-      :
-      <>
+      
       {
-        questionDetails.map(question => {
+      questionDetails.map((test) => {
+        return (
+          <div>
+          <h2>{test.question}</h2>
+            <ul>
+              <li className="correct">{test.correct_answer}</li>
 
-          return (
-            <div>
-              <h2>{question.question}</h2>
-              <p>{question.incorrectOne}</p>
-              <p>{question.correct_answer}</p>
-            </div>
-
-          )
-        })
-      }
-      </>
-
+            {test.incorrect_answers.map((anotherTest) => {
+              return (
+                <li className="incorrect">{anotherTest}</li>
+              );
+            })}
+            </ul>
+          </div>
+        );
+      })
       }
     </div>
-  )
-
+  );
 
 }
 
