@@ -21,52 +21,40 @@ function QuizCall({ userSelectedCategory, userSelectedQuestion}) {
   console.log(questionDetails)
 
   const combinedArray = questionDetails.map((test) => {
-    return [...test.incorrect_answers, test.correct_answer]
+    return {
+      question: test.question,
+      answers: [...test.incorrect_answers, test.correct_answer]
+    }
   })
 
   console.log("array", combinedArray)
 
-
   return (
     <div>
       <form>
-      {
-      questionDetails.map((test) => {
-        return (
-            <>
-            <h2>{decodeURIComponent(test.question)}</h2>
-            <ul>
-              {/* <li className="correct" key={decodeURIComponent(test.correct_answer)}>
-                <input name="answer" type="radio"  value={decodeURIComponent(test.correct_answer)}/>{decodeURIComponent(test.correct_answer)}</li>
-
-              {test.incorrect_answers.map((anotherTest) => {
-              return (
-                <li className="incorrect" >
-                  <input name="answer" type="radio"  value={decodeURIComponent(anotherTest)}/>{decodeURIComponent(anotherTest)}</li>
-              );
-            })} */}
-            </ul>
-
-            {
-            combinedArray.map((test) => {
-              const arrayTest = decodeURIComponent(test)
-              console.log(arrayTest)
-              {
-                arrayTest.map((anotherTest) => {
-                  return (
-                  <p>{anotherTest}</p>
-                  )
-                })
-
-              }
-            })
-            }
-            </>
-        );
-      })
-      }
+        {
+          combinedArray.map((test) => {
+            return(
+              <>
+              <h2>{decodeURIComponent(test.question)}</h2>
+              <ul>
+                {
+                  test.answers.map((testAnswer) => {
+                    return(
+                      <li><input name="answer" type="radio"/>{decodeURIComponent(testAnswer)}</li>
+                    )
+                  })
+                }
+              </ul>
+              </>
+            )
+          })
+        }
+      <button>Submit Quiz!</button>
       </form>
     </div>
+
+    // Next steps: Store correct answer in a variable or equivalent -> conditional statement to check if user selected option === correct answer
   );
 
 }
