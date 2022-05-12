@@ -20,49 +20,23 @@ function QuizCall({ userSelectedCategory, userSelectedQuestion}) {
 
   console.log(questionDetails)
 
-  const correctAnswer = questionDetails.map((test) => {
-    return (test.correct_answer)
-  })
-  console.log(correctAnswer)
-
-  const incorrectAnswers = questionDetails.map((test) => {
-    return {...test.incorrect_answers}
-  })
-  console.log(incorrectAnswers)
-
-
-  const allAnswers = incorrectAnswers.map((test) => {
-    console.log(test)
-    return{...correctAnswer, test}
+  const combinedArray = questionDetails.map((test) => {
+    return [...test.incorrect_answers, test.correct_answer]
   })
 
-  const testAnswers = questionDetails.map((test) => {
-    const newArray = []
-    const correctAnswer = test.correct_answer
-    test.incorrect_answers.map(wrong => {
-      console.log(correctAnswer, wrong)
-    })
-  })
-
-  console.log(testAnswers)
-
-  // console.log(allAnswers)
-
-
-    
-
+  console.log("array", combinedArray)
 
 
   return (
     <div>
-      
+      <form>
       {
       questionDetails.map((test) => {
         return (
-          <form>
+            <>
             <h2>{decodeURIComponent(test.question)}</h2>
             <ul>
-              <li className="correct" key={decodeURIComponent(test.correct_answer)}>
+              {/* <li className="correct" key={decodeURIComponent(test.correct_answer)}>
                 <input name="answer" type="radio"  value={decodeURIComponent(test.correct_answer)}/>{decodeURIComponent(test.correct_answer)}</li>
 
               {test.incorrect_answers.map((anotherTest) => {
@@ -70,12 +44,28 @@ function QuizCall({ userSelectedCategory, userSelectedQuestion}) {
                 <li className="incorrect" >
                   <input name="answer" type="radio"  value={decodeURIComponent(anotherTest)}/>{decodeURIComponent(anotherTest)}</li>
               );
-            })}
+            })} */}
             </ul>
-          </form>
+
+            {
+            combinedArray.map((test) => {
+              const arrayTest = decodeURIComponent(test)
+              console.log(arrayTest)
+              {
+                arrayTest.map((anotherTest) => {
+                  return (
+                  <p>{anotherTest}</p>
+                  )
+                })
+
+              }
+            })
+            }
+            </>
         );
       })
       }
+      </form>
     </div>
   );
 
