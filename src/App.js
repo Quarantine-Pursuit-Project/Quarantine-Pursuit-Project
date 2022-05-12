@@ -1,8 +1,9 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Dropdown from "./components/Dropdown";
-import ClearPageButton from "./components/ClearPageButton";
+import Dropdown from "./Components/Dropdown";
+import ClearPageButton from "./Components/ClearPageButton";
+import QuizCall from "./Components/QuizCall";
 
 function App() {
   const [categories, Setcategories] = useState([]);
@@ -12,6 +13,7 @@ function App() {
       <h1>Quarantine Pursuit Project!</h1>
       <Dropdown />
       <ClearPageButton />
+      <QuizCall />
     </div>
   );
 }

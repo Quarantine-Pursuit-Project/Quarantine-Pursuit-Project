@@ -1,4 +1,5 @@
 import { useState } from "react";
+import QuizCall from "./QuizCall";
 
 const DisplayDropdown = ({ getCategory }) => {
   // Declaring state variables to store user selected values from dropdown in state
@@ -95,7 +96,9 @@ const DisplayDropdown = ({ getCategory }) => {
           questions endpoint.
         </p>
       </div>
+      <QuizCall userSelectedQuestion={userSelectedQuestion} userSelectedCategory={userSelectedCategory}/>
     </section>
+
   );
 };
 
