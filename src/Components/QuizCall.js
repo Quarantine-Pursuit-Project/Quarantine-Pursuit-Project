@@ -7,7 +7,7 @@ function QuizCall() {
 
   useEffect(() => {
     axios({
-      url: `https://opentdb.com/api.php?amount=${"10"}&category=${"12"}&type=multiple`,
+      url: `https://opentdb.com/api.php?amount=${"10"}&category=${"12"}&type=multiple&encode=url3986`,
       method: "GET",
       dataResponse: "json",
     }).then((response) => {
@@ -59,13 +59,13 @@ function QuizCall() {
       questionDetails.map((test) => {
         return (
           <div>
-          <h2>{test.question}</h2>
+          <h2>{decodeURIComponent(test.question)}</h2>
             <ul>
-              <li className="correct">{test.correct_answer}</li>
+              <li className="correct">{decodeURIComponent(test.correct_answer)}</li>
 
-            {test.incorrect_answers.map((anotherTest) => {
+              {test.incorrect_answers.map((anotherTest) => {
               return (
-                <li className="incorrect">{anotherTest}</li>
+                <li className="incorrect">{decodeURIComponent(anotherTest)}</li>
               );
             })}
             </ul>
