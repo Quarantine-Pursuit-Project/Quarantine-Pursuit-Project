@@ -1,5 +1,6 @@
+
 // Modules
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 // Config
 // import axios from 'axios';
 
@@ -8,7 +9,12 @@ import SaveGame from './Components/SaveGame';
 import LoadGame from './Components/LoadGame';
 
 // Styling
-import './App.css';
+import "./App.css";
+import axios from "axios";
+import Dropdown from "./Components/Dropdown";
+import ClearPageButton from "./Components/ClearPageButton";
+import QuizCall from "./Components/QuizCall";
+
 
 // Save game button:
 // - What does it record?
@@ -26,6 +32,7 @@ import './App.css';
 // 1) Assign the selected saves to the display game component.
 
 function App() {
+
   
   const [ score, setScore ] = useState(['']);
   const [ currentQuestion, setCurrentQuestion ] = useState('');
@@ -50,6 +57,9 @@ function App() {
   return (
     <div className="App">
       <h1>Quarantine Pursuit Project</h1>
+      <Dropdown />
+      <ClearPageButton />
+      <QuizCall />
       <div className='saveGame'>
         {/* Communicate with firebase in this component */}
         <SaveGame 
@@ -65,7 +75,6 @@ function App() {
       <div className="loadGame">
         <LoadGame />
       </div>
-    </div>
   );
 }
 
