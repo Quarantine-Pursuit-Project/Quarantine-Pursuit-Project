@@ -10,10 +10,33 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< Updated upstream
       <h1>Quarantine Pursuit Project!</h1>
       <Dropdown />
       <ClearPageButton />
       <QuizCall />
+=======
+      <h1>Quarantine Pursuit Project</h1>
+      <div className='saveGame'>
+        {/* Communicate with firebase in this component */}
+        <SaveGame 
+        score = { score }
+        setScore = { setScore }
+        currentQuestion = { currentQuestion }
+        setCurrentQuestion = { setCurrentQuestion }
+        questionList = { questionList }
+        setQuestionList = { setQuestionList }
+        testFunction = { testFunction }
+        />
+      </div>
+      <div className="loadGame">
+        <LoadGame 
+        
+        
+        
+        />
+      </div>
+>>>>>>> Stashed changes
     </div>
   );
 }
