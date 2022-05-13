@@ -1,11 +1,11 @@
 // Modules
-import { useState, useEffect } from 'react';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { useState } from 'react';
 // Config
-import firebase from './firebase';
-import axios from 'axios';
+// import axios from 'axios';
+
 // Components
 import SaveGame from './Components/SaveGame'; 
+import LoadGame from './Components/LoadGame';
 
 // Styling
 import './App.css';
@@ -27,15 +27,44 @@ import './App.css';
 
 function App() {
   
-  const [ score, setScore ] = useState('');
+  const [ score, setScore ] = useState(['']);
   const [ currentQuestion, setCurrentQuestion ] = useState('');
-  const [ questionList, setQuestionList ] = useState('');
+  const [ questionList, setQuestionList ] = useState([]);
+
+  const testFunction = ()=>{
+    return (
+      setScore('5'),
+      setCurrentQuestion('6'),
+      setQuestionList([
+        {
+          numberOfQuestion: "10",
+          numberOfRightAnswer: "1"},
+        {
+          numberOfQuestion: "5",
+          numberOfRightAnswer: "1"}    
+      ])
+    )
+  }
+
 
   return (
     <div className="App">
       <h1>Quarantine Pursuit Project</h1>
-
-      <SaveGame />
+      <div className='saveGame'>
+        {/* Communicate with firebase in this component */}
+        <SaveGame 
+        score = { score }
+        setScore = { setScore }
+        currentQuestion = { currentQuestion }
+        setCurrentQuestion = { setCurrentQuestion }
+        questionList = { questionList }
+        setQuestionList = { setQuestionList }
+        testFunction = { testFunction }
+        />
+      </div>
+      <div className="loadGame">
+        <LoadGame />
+      </div>
     </div>
   );
 }
