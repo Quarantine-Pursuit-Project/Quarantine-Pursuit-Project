@@ -10,13 +10,13 @@ const DisplayDropdown = ({ getCategory }) => {
     // we were told to save this "categorySelected" variable within state
     const categorySelected = e.target.value;
     setUserSelectedCategory(categorySelected);
-    console.log("The ID for this category is:", categorySelected);
+    // console.log("The ID for this category is:", categorySelected);
   };
   //   questionSelection function to save number of questions selected by user
   const questionSelection = (number) => {
     const numberSelected = number.target.value;
     setUserSelectedQuestion(numberSelected);
-    console.log(numberSelected);
+    // console.log(numberSelected);
   };
   // Creating array that is used for number of questions dropdown
   const numberArray = [];

@@ -13,7 +13,7 @@ function App() {
       <h1>Quarantine Pursuit Project!</h1>
       <Dropdown />
       <ClearPageButton />
-      <QuizCall />
+      {/* <QuizCall /> */}
     </div>
   );
 }
