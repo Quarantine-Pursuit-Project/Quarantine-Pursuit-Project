@@ -32,15 +32,11 @@ const QuizCall = ({ category, questionCount }) => {
 
   const combinedArray = questionDetail.map((test) => {
     const goodChoice = test.correct_answer;
-    console.log("GoodChoice", goodChoice);
     const badChoice = [...test.incorrect_answers];
-    // Generate a random index based on the length of the incorrect answer array - from index 0 to end-index, 2 in this case
-    const randomIndex = Math.floor(Math.random() * (1 + badChoice.length));
-    console.log("badChoiceLength", badChoice.length);
-    console.log("randomIndex", randomIndex);
+    // Generate a random index based on the length of the incorrect answer array +1: from index 0 to end-index (3 in this case) of the newly array with all choices
+    const randomIndex = Math.floor(Math.random() * (badChoice.length + 1));
     badChoice.splice(randomIndex, 0, goodChoice);
     const allChoice = badChoice;
-    console.log('allChoice', allChoice);
     return {
       question: test.question,
       answers: allChoice,
