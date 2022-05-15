@@ -13,7 +13,7 @@ import Footer from './Components/Footer';
 // Styling
 import "./App.css";
 
-function App() {
+const App = () => {
   
   const [ score, setScore ] = useState(['']);
   const [ currentQuestion, setCurrentQuestion ] = useState('');

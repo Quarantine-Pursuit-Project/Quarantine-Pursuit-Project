@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import DisplayDropdown from "./DisplayDropdown";
 
-function QuizCall({ userSelectedCategory, userSelectedQuestion}) {
+const QuizCall = ({ userSelectedCategory, userSelectedQuestion }) => {
 
   const [questionDetails, setQuestionDetails] = useState([])
 
