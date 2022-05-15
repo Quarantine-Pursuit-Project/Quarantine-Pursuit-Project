@@ -7,7 +7,7 @@ function QuizCall({ userSelectedCategory, userSelectedQuestion}) {
 const [questionDetails, setQuestionDetails] = useState([])
 const [storeCorrectAnswer, setStoreCorrectAnswer] = useState()
 const [counter, setCounter] = useState(0)
-const [disable, setDisable] = useState(false)
+const [disable, setDisable] = useState()
 
 useEffect(() => {
     axios({
@@ -81,7 +81,7 @@ return (
         <form>
             <h2>{decodeURIComponent(test.question)}</h2>
             <button
-                className={`${disable}`}
+                className={disable}
                 onClick={
                     checkCorrectAnswer
                 }>
