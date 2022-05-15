@@ -4,7 +4,7 @@ import { useState } from "react";
 // Components
 import Header from './Components/Header';
 import Dropdown from "./Components/Dropdown";
-import ClearPageButton from "./Components/ClearPageButton";
+import NewGame from "./Components/NewGame";
 import QuizCall from "./Components/QuizCall";
 import SaveGame from './Components/SaveGame'; 
 import LoadGame from './Components/LoadGame';
@@ -41,11 +41,15 @@ const App = () => {
       <Header />
 
       <main>
-        <Dropdown />
-        <ClearPageButton />
-        <QuizCall />
-        <div className='saveGame'>
-        {/* Communicate with firebase in this component */}
+        <section className="questionHandlingSection">
+          <Dropdown />
+          <QuizCall />
+        </section>
+
+        <section className="gameHandlingSect">
+          <NewGame />
+          <div className='saveGame'>
+          {/* Communicate with firebase in this component */}
           <SaveGame 
             score = { score }
             setScore = { setScore }
@@ -56,10 +60,11 @@ const App = () => {
             // REMOVE TEST
             testFunction = { testFunction }
           />
-        </div>
-        <div className="loadGame">
-          <LoadGame />
-        </div>
+          </div>
+          <div className="loadGame">
+            <LoadGame />
+          </div>
+        </section>
       </main>
 
       <Footer />

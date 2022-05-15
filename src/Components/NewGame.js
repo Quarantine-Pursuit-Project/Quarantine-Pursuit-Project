@@ -8,7 +8,7 @@ const ClearPageButton = () => {
     window.location.reload(false);
     console.log("buttonClick");
   };
-  return <button onClick={buttonClick}>Refresh Page</button>;
+  return <button onClick={buttonClick}>NEW GAME</button>;
 };
 
 export default ClearPageButton;
