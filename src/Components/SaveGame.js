@@ -1,7 +1,9 @@
-import { getDatabase, ref, push } from 'firebase/database';
+// Config
 import firebase from '../firebase';
+// Modules
+import { getDatabase, ref, push } from 'firebase/database';
 
-/* (Save game button:
+/* Save game button:
 I) What does it record?
 1) The number of correct and/or wrong choices - counters. There are two ways to save this:
     1a) Save the number of correct answer only. If needed, the number of wrong answer = arrayOfGenerateQuestions.length - # of correct answer. This is the method used for the Save Game Component.

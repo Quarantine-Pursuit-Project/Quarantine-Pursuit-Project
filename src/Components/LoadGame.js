@@ -1,5 +1,7 @@
-import { getDatabase, ref, onValue } from 'firebase/database';
+// Config
 import firebase from '../firebase';
+// Modules
+import { getDatabase, ref, push } from 'firebase/database';
 
 /* - How does it load the save?
 1) Assign the selected saves to the display game component.

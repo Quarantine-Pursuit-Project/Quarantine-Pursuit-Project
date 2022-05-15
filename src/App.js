@@ -1,6 +1,3 @@
-// Config
-import axios from 'axios';
-
 // Modules
 import { useState } from "react";
 
@@ -56,6 +53,7 @@ function App() {
             setCurrentQuestion = { setCurrentQuestion }
             questionList = { questionList }
             setQuestionList = { setQuestionList }
+            // REMOVE TEST
             testFunction = { testFunction }
           />
         </div>
