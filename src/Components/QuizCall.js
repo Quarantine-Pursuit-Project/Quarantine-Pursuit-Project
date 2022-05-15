@@ -8,9 +8,15 @@ function QuizCall({ userSelectedCategory, userSelectedQuestion}) {
 
   useEffect(() => {
     axios({
-      url: `https://opentdb.com/api.php?amount=${userSelectedQuestion}&category=${userSelectedCategory}&type=multiple&encode=url3986`,
+      url: `https://opentdb.com/api.php?`,
       method: "GET",
       dataResponse: "json",
+      params: {
+        amount: userSelectedQuestion,
+        category: userSelectedCategory,
+        type: "multiple",
+        encode: "url3986"
+      }
     }).then((response) => {
 
       const responseData = response.data.results
