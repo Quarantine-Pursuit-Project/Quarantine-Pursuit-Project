@@ -1,4 +1,7 @@
+// Config
+// Modules
 import { useEffect, useState } from "react";
+// Components
 
 const ClearPageButton = () => {
   const buttonClick = () => {

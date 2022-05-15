@@ -1,3 +1,8 @@
+// Config
+// Modules
+// Components
+// Stylings
+
 const Header = ()=>{
     return (
         <header>

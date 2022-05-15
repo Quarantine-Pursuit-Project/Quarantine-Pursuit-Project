@@ -1,5 +1,8 @@
+// Config
 import axios from "axios";
+// Modules
 import { useEffect, useState } from "react";
+// Components
 import DisplayDropdown from "./DisplayDropdown";
 
 const QuizCall = ({ userSelectedCategory, userSelectedQuestion }) => {

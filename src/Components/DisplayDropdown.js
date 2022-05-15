@@ -1,4 +1,7 @@
+// Config
+// Modules
 import { useState } from "react";
+// Components
 import QuizCall from "./QuizCall";
 
 const DisplayDropdown = ({ getCategory }) => {
