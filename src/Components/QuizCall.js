@@ -38,8 +38,9 @@ const QuizCall = ({ category, questionCount }) => {
     const randomIndex = Math.floor(Math.random() * (1 + badChoice.length));
     console.log("badChoiceLength", badChoice.length);
     console.log("randomIndex", randomIndex);
-    console.log('allChoice', badChoice);
-    const allChoice = badChoice.splice(randomIndex, 0, goodChoice)
+    badChoice.splice(randomIndex, 0, goodChoice);
+    const allChoice = badChoice;
+    console.log('allChoice', allChoice);
     return {
       question: test.question,
       answers: allChoice,
