@@ -30,16 +30,16 @@ const QuizCall = ({ category, questionCount }) => {
 
   console.log("questionDetail",questionDetail)
 
-  const combinedArray = questionDetail.map((test, index) => {
-    const goodChoice = test.correct_answer;
-    const badChoice = [...test.incorrect_answers];
+  const combinedArray = questionDetail.map((question, index) => {
+    const goodChoice = question.correct_answer;
+    const badChoice = [...question.incorrect_answers];
     // Generate a random index based on the length of the badChoice array + 1 => from index 0 to end-index (3 in this case) of the newly spliced array with all choices
     const randomIndex = Math.floor(Math.random() * (badChoice.length + 1));
     badChoice.splice(randomIndex, 0, goodChoice);
     const allChoice = badChoice;
     return {
       key: index,
-      question: test.question,
+      question: question.question,
       choices: allChoice,
       goodChoice: goodChoice
     }
@@ -51,15 +51,15 @@ const QuizCall = ({ category, questionCount }) => {
     <div>
       <form>
         {
-          combinedArray.map((test) => {
+          combinedArray.map((question) => {
             return(
               <>
-              <h2>{decodeURIComponent(test.question)}</h2>
+              <h2>{decodeURIComponent(question.question)}</h2>
               <ul>
                 {
-                  test.choices.map((testAnswer) => {
+                  question.choices.map((questionAnswer) => {
                     return(
-                      <li><input key={test.key} name="answer" type="radio"/>{decodeURIComponent(testAnswer)}</li>
+                      <li><input key={question.key} name="answer" type="radio"/>{decodeURIComponent(questionAnswer)}</li>
                     )
                   })
                 }
