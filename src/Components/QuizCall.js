@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 // Components
 import DisplayDropdown from "./DisplayDropdown";
 
-const QuizCall = ({ userSelectedCategory, userSelectedQuestion }) => {
+const QuizCall = ({ category, questionCount }) => {
 
-  const [questionDetails, setQuestionDetails] = useState([])
+  const [questionDetail, setQuestionDetail] = useState([])
 
   useEffect(() => {
     axios({
@@ -15,28 +15,38 @@ const QuizCall = ({ userSelectedCategory, userSelectedQuestion }) => {
       method: "GET",
       dataResponse: "json",
       params: {
-        amount: userSelectedQuestion,
-        category: userSelectedCategory,
+        amount: questionCount,
+        category: category,
         type: "multiple",
         encode: "url3986"
       }
     }).then((response) => {
 
       const responseData = response.data.results
-      setQuestionDetails(responseData)
+      setQuestionDetail(responseData)
+
     })
-  }, [userSelectedCategory, userSelectedQuestion]);
+  }, [category, questionCount]);
 
-  console.log(questionDetails)
+  console.log("questionDetail",questionDetail)
 
-  const combinedArray = questionDetails.map((test) => {
+  const combinedArray = questionDetail.map((test) => {
+    const goodChoice = test.correct_answer;
+    console.log("GoodChoice", goodChoice);
+    const badChoice = [...test.incorrect_answers];
+    // Generate a random index based on the length of the incorrect answer array - from index 0 to end-index, 2 in this case
+    const randomIndex = Math.floor(Math.random() * (1 + badChoice.length));
+    console.log("badChoiceLength", badChoice.length);
+    console.log("randomIndex", randomIndex);
+    console.log('allChoice', badChoice);
+    const allChoice = badChoice.splice(randomIndex, 0, goodChoice)
     return {
       question: test.question,
-      answers: [...test.incorrect_answers, test.correct_answer]
+      answers: allChoice,
     }
   })
 
-  console.log("array", combinedArray)
+  console.log("combined array", combinedArray)
 
   return (
     <div>

@@ -5,7 +5,6 @@ import { useState } from "react";
 import Header from './Components/Header';
 import Dropdown from "./Components/Dropdown";
 import NewGame from "./Components/NewGame";
-import QuizCall from "./Components/QuizCall";
 import SaveGame from './Components/SaveGame'; 
 import LoadGame from './Components/LoadGame';
 import Footer from './Components/Footer';
@@ -43,7 +42,6 @@ const App = () => {
       <main>
         <section className="questionHandlingSection">
           <Dropdown />
-          <QuizCall />
         </section>
 
         <section className="gameHandlingSect">

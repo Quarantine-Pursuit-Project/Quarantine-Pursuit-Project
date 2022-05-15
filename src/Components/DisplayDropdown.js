@@ -6,20 +6,20 @@ import QuizCall from "./QuizCall";
 
 const DisplayDropdown = ({ getCategory }) => {
   // Declaring state variables to store user selected values from dropdown in state
-  const [userSelectedCategory, setUserSelectedCategory] = useState();
-  const [userSelectedQuestion, setUserSelectedQuestion] = useState();
+  const [category, setCategory] = useState();
+  const [questionCount, setQuestionCount] = useState();
   // userSelection function to save category id
   const userSelection = (e) => {
     // we were told to save this "categorySelected" variable within state
     const categorySelected = e.target.value;
-    setUserSelectedCategory(categorySelected);
-    console.log("The ID for this category is:", categorySelected);
+    setCategory(categorySelected);
+    // console.log("The ID for this category is:", categorySelected);
   };
   //   questionSelection function to save number of questions selected by user
   const questionSelection = (number) => {
     const numberSelected = number.target.value;
-    setUserSelectedQuestion(numberSelected);
-    console.log(numberSelected);
+    setQuestionCount(numberSelected);
+    // console.log(numberSelected);
   };
   // Creating array that is used for number of questions dropdown
   const numberArray = [];
@@ -63,7 +63,7 @@ const DisplayDropdown = ({ getCategory }) => {
           </select>
         </form>
         <p>
-          the category id is <span>{userSelectedCategory}</span> to be used for
+          the category id is <span>{category}</span> to be used for
           the API endpoint for the questions
         </p>
       </div>
@@ -95,11 +95,14 @@ const DisplayDropdown = ({ getCategory }) => {
           </select>
         </form>
         <p>
-          You picked {userSelectedQuestion} questions to be used for number of
+          You picked {questionCount} questions to be used for number of
           questions endpoint.
         </p>
       </div>
-      <QuizCall userSelectedQuestion={userSelectedQuestion} userSelectedCategory={userSelectedCategory}/>
+      <QuizCall 
+        questionCount = { questionCount } 
+        category = { category }
+      />
     </section>
 
   );
