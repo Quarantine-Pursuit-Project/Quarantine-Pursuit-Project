@@ -18,7 +18,6 @@ const SaveGame = (props)=>{
 
     const userSaveInfo = [
         props.score, 
-        props.currentQuestion, 
         props.questionList
     ]
     const handleUserSave = ()=>{
@@ -26,7 +25,7 @@ const SaveGame = (props)=>{
         const database = getDatabase(firebase);
         const dbRef = ref(database);
         
-        if(props.score || props.currentQuestion || props.questionList){
+        if(props.score || props.questionList){
             // Adding new save to our firebase db
             push(dbRef, userSaveInfo);
         } else {
