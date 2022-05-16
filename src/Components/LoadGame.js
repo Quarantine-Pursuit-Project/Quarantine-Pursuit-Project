@@ -3,6 +3,7 @@ import firebase from '../firebase';
 // Modules
 import { getDatabase, ref, push, onValue } from 'firebase/database';
 import React, { useEffect, useState } from "react";
+import LoadGameList from './LoadGameList';
 // import loadgameList ()
     // iterate the response data to form a list -> its getting the data from the loadGame component
     // this component will be passed within the onValue 
@@ -16,6 +17,7 @@ import React, { useEffect, useState } from "react";
 
 const LoadGame = ()=>{
     const [data, setData] = useState([])
+    // unsure of what loadList is accomplishing
     const [loadList, setLoadList] = useState()
 
     useEffect(() => {
@@ -23,8 +25,16 @@ const LoadGame = ()=>{
         const dbRef = ref(database)
 
         onValue(dbRef, (response) => {
+            const newState= []
+
             // < list of saved games components />
-            console.log(response.val())
+            const testData = response.val()
+
+            for (let key in testData) {
+                newState.push(testData[key])
+            }
+
+            setData(newState)
         })
     }, [loadList])
 
@@ -42,6 +52,7 @@ const LoadGame = ()=>{
                 <div className='loadGame'>
                     <button onClick={(e)=>{handleSaveListDisplay(e)}}>LOAD GAME</button>
                 </div>
+                <LoadGameList loadGame={data}/>
             </div>
             <ul>
 
