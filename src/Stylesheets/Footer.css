@@ -44,7 +44,9 @@ body {
 }
 
 .infoContainer a:hover,
-.individualContainer i:hover {
+.individualContainer i:hover,
+.infoContainer a:focus,
+.individualContainer i:focus {
   color: #FFB0C6;
   transition: 0.5s;
 }

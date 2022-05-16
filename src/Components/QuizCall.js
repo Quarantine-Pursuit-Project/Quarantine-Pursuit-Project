@@ -49,7 +49,6 @@ const QuizCall = ({ category, questionCount }) => {
 
   return (
     <div>
-   
         {
           combinedArray.map((question) => {
             return(
@@ -59,7 +58,7 @@ const QuizCall = ({ category, questionCount }) => {
                 {
                   question.choices.map((questionAnswer) => {
                     return(
-                      <li><input key={question.key} name="answer" type="radio"/>{decodeURIComponent(questionAnswer)}</li>
+                      <li><input key={question.key} id={decodeURIComponent(questionAnswer)} name="answer" type="radio" /><label for={decodeURIComponent(questionAnswer)}>{decodeURIComponent(questionAnswer)}</label></li>
                     )
                   })
                 }
@@ -68,7 +67,7 @@ const QuizCall = ({ category, questionCount }) => {
             )
           })
         }
-      <button>Submit Quiz!</button>
+      <button className="submitButton">Submit Quiz!</button>
 
     </div>
 
