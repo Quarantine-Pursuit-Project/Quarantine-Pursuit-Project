@@ -8,9 +8,12 @@ import "../Stylesheets/Header.css"
 const Header = ()=>{
     return (
         <header>
-            <h1>Quarantine Pursuit Project</h1>
-            {/* Please provide a short introduction on how to use the App. 
-            If possible, please animate the title or anything should you see fit to increase the general aesthetic of the app.*/}
+            <div className="wrapper">
+                <h1 className="title">Quarantine Pursuit</h1>
+                {/* Credit to Alvaro (https://codepen.io/alvarotrigo/pen/dyzxgOO) for the animation styling on the H1! */}
+
+                <h3>please choose a category + number of questions to begin!</h3>
+            </div>
         </header>
     );
 }
