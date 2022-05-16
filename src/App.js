@@ -40,29 +40,31 @@ const App = () => {
       <Header />
 
       <main>
-        <section className="questionHandlingSection">
-          <Dropdown />
-        </section>
+        <div className="wrapper">
+          <section className="questionHandlingSection">
+            <Dropdown />
+          </section>
 
-        <section className="gameHandlingSect">
-          <NewGame />
-          <div className='saveGame'>
-          {/* Communicate with firebase in this component */}
-          <SaveGame 
-            score = { score }
-            setScore = { setScore }
-            currentQuestion = { currentQuestion }
-            setCurrentQuestion = { setCurrentQuestion }
-            questionList = { questionList }
-            setQuestionList = { setQuestionList }
-            // REMOVE TEST
-            testFunction = { testFunction }
-          />
-          </div>
-          <div className="loadGame">
-            <LoadGame />
-          </div>
-        </section>
+          <section className="gameHandlingSect">
+            <NewGame />
+            <div className='saveGame'>
+            {/* Communicate with firebase in this component */}
+            <SaveGame 
+              score = { score }
+              setScore = { setScore }
+              currentQuestion = { currentQuestion }
+              setCurrentQuestion = { setCurrentQuestion }
+              questionList = { questionList }
+              setQuestionList = { setQuestionList }
+              // REMOVE TEST
+              testFunction = { testFunction }
+            />
+            </div>
+            <div className="loadGame">
+              <LoadGame />
+            </div>
+          </section>
+        </div>
       </main>
 
       <Footer />

@@ -1,5 +1,6 @@
 header {
   font-family: 'Merienda One', cursive;
+  background-color: #FFB0C6;
 }
 
 .wrapper {
@@ -16,6 +17,7 @@ h1 {
 
 h3 {
   padding-bottom: 25px;
+  margin: 0;
 }
 
 /* title animation */

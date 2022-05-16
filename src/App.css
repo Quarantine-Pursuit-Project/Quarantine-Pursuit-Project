@@ -1,44 +1,79 @@
 /* Styling resources and references -REMOVE LATER-:
 - Button:
-https://old.reddit.com/r/webdev/comments/uq104d/100_css_buttons_code_in_the_replies/
+
 - Dropdown:
 https://codinhood.com/micro/10-dropdown-menu-animations-css-transform */
+/* https://old.reddit.com/r/webdev/comments/uq104d/100_css_buttons_code_in_the_replies/ */
 
 .App {
   text-align: center;
+  font-size: 125%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  font-family: "Barlow", sans-serif;
+  background-color: #9BD694;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.questionHandlingSection {
+  padding: 50px 0;
+  background-color: #9BD694;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+li {
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.loadGameSection ul {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gameHandlingSect {
+  padding-bottom: 50px;
 }
+
+select {
+  text-align: center;
+}
+
+
+/* dropdowns */
+
+select {
+  background-color: #AFEDFF;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 0 black;
+  font-size: 1.1rem;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+/* buttons */
+
+button {
+  padding: 0;
+  margin: 5px;
+  width: 150px;
+  height: 35px;
+  font-size: 1.1rem;
+  background-color: #FFB0C6;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 0 black;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #AFEDFF;
+  transition: 1s;
+
+}
+
+
+
+
+
+
+

@@ -31,10 +31,6 @@ const DisplayDropdown = ({ getCategory }) => {
   return (
     //   rendering components of the page
     <section>
-      <h2>
-        This component is linked to Dropdown.js (and Dropdown.js) is a component
-        that links to parent "App.js"
-      </h2>
       {/* Code for game category dropdown */}
       <div>
         <form>
@@ -62,10 +58,6 @@ const DisplayDropdown = ({ getCategory }) => {
             })}
           </select>
         </form>
-        <p>
-          the category id is <span>{category}</span> to be used for
-          the API endpoint for the questions
-        </p>
       </div>
       {/* Code for number of questions dropdown */}
       <div>
@@ -94,10 +86,6 @@ const DisplayDropdown = ({ getCategory }) => {
             })}
           </select>
         </form>
-        <p>
-          You picked {questionCount} questions to be used for number of
-          questions endpoint.
-        </p>
       </div>
       <QuizCall 
         questionCount = { questionCount } 
