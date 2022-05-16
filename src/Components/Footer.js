@@ -1,5 +1,6 @@
 // Config
 // Modules
+import React, { useEffect, useState } from "react";
 // Components
 // Stylings
 import "../Stylesheets/Footer.css";

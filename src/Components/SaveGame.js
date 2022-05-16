@@ -2,6 +2,7 @@
 import firebase from '../firebase';
 // Modules
 import { getDatabase, ref, push } from 'firebase/database';
+import React, { useEffect, useState } from "react";
 
 /* Save game button:
 I) What does it record?
@@ -15,18 +16,20 @@ II) How does it store it in the Firebase (data structure)?
 2) In an array of object (???) */
 
 const SaveGame = (props)=>{
-
     const userSaveInfo = [
         props.score, 
-        props.currentQuestion, 
+<<<<<<< HEAD
+        // props.currentQuestion, 
+=======
+>>>>>>> fa0303121d609cf88cf85e3c3bee7a482c888232
         props.questionList
     ]
-    const handleUserSave = ()=>{
+    const handleUserSave = (e)=>{
         // Creating ref to the db
         const database = getDatabase(firebase);
         const dbRef = ref(database);
         
-        if(props.score || props.currentQuestion || props.questionList){
+        if(props.score || props.questionList){
             // Adding new save to our firebase db
             push(dbRef, userSaveInfo);
         } else {

@@ -1,14 +1,16 @@
 // Config
 // Modules
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // Components
 
-const ClearPageButton = () => {
+const NewGame = () => {
   const buttonClick = () => {
     window.location.reload(false);
     console.log("buttonClick");
   };
-  return <button onClick={buttonClick}>NEW GAME</button>;
+  return (
+    <button onClick={buttonClick}>NEW GAME</button>
+  )
 };
 
-export default ClearPageButton;
+export default NewGame;
