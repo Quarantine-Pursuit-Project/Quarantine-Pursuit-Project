@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 // Components
 
-const ClearPageButton = () => {
+const NewGame = () => {
   const buttonClick = () => {
     window.location.reload(false);
     console.log("buttonClick");
@@ -11,4 +11,4 @@ const ClearPageButton = () => {
   return <button onClick={buttonClick}>NEW GAME</button>;
 };
 
-export default ClearPageButton;
+export default NewGame;
