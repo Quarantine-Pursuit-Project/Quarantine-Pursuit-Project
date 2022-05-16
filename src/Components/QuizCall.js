@@ -1,7 +1,7 @@
 // Config
 import axios from "axios";
 // Modules
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // Components
 import DisplayDropdown from "./DisplayDropdown";
 
@@ -55,6 +55,7 @@ const QuizCall = ({ category, questionCount }) => {
             return(
               <>
               <h2>{decodeURIComponent(question.question)}</h2>
+              <button>Submit answer</button>
               <ul>
                 {
                   question.choices.map((questionAnswer) => {

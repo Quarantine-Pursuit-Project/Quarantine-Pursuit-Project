@@ -1,6 +1,6 @@
 // Config
 // Modules
-import { useState } from "react";
+import React, { useState } from "react";
 // Components
 import QuizCall from "./QuizCall";
 
