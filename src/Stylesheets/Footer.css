@@ -13,7 +13,7 @@ body {
   padding: 0 25px;
   text-align: left;
   display: flex;
-  align-self: center;
+  justify-content: center;
 }
 
 .individualContainer p {
@@ -61,4 +61,15 @@ footer {
 .individualContainer i {
   font-size: 1.5rem;
   color: black;
+}
+
+@media (max-width: 540px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  select {
+    padding: 5px 5px;
+    font-size: 0.5rem;
+  }
 }
