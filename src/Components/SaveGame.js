@@ -18,10 +18,6 @@ II) How does it store it in the Firebase (data structure)?
 const SaveGame = (props)=>{
     const userSaveInfo = [
         props.score, 
-<<<<<<< HEAD
-        // props.currentQuestion, 
-=======
->>>>>>> fa0303121d609cf88cf85e3c3bee7a482c888232
         props.questionList
     ]
     const handleUserSave = (e)=>{

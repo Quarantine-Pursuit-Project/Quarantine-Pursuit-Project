@@ -55,12 +55,7 @@ const QuizCall = ({ category, questionCount }) => {
             return(
               <>
               <h2>{decodeURIComponent(question.question)}</h2>
-<<<<<<< HEAD
-              <button>Submit answer</button>
-              <ul>
-=======
               <form>
->>>>>>> fa0303121d609cf88cf85e3c3bee7a482c888232
                 {
                   question.choices.map((questionAnswer) => {
                     return(
