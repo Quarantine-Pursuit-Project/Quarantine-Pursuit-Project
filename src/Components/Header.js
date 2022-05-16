@@ -2,6 +2,7 @@
 // Modules
 // Components
 // Stylings
+import "../Stylesheets/Header.css"
 
 const Header = ()=>{
     return (
