@@ -4,7 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 // Components
 
-const QuizCall = ({ category, questionCount, setCombinedArray }) => {
+const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArray }) => {
 
   const [questionDetail, setQuestionDetail] = useState([])
   const [displayArray, setDisplayArray] = useState([])
@@ -52,8 +52,12 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
   const handleArrayAssignment = ()=>{
     setDisplayArray([...combinedArray])
     setCombinedArray([...combinedArray])
+    if (storeCombinedArray.length != 0) {
+      setDisplayArray([...storeCombinedArray])
+    }
   }
 
+// if setStoreCategoryArray is not EMPTY, display whatever user selected
   return (
     <div>
       <button 

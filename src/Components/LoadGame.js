@@ -15,7 +15,7 @@ import LoadGameList from './LoadGameList';
 2a) Automatically 
 2b) Provide an option for the user */
 
-const LoadGame = ()=>{
+const LoadGame = (props)=>{
     const [data, setData] = useState([])
     // unsure of what loadList is accomplishing
     const [loadList, setLoadList] = useState(false)
@@ -54,7 +54,7 @@ const LoadGame = ()=>{
         <div className='loadGameSection'>
             <div>
                 <div className='loadGame'>
-                    <button onClick={(e)=>{handleLoadListState(e)}}>LOAD GAME</button>
+                    <button onClick={(e)=>{handleLoadListState(e)}}>LIST OF SAVED GAMES</button>
                 </div>
             </div>
             <ul>
@@ -65,7 +65,10 @@ const LoadGame = ()=>{
                             console.log(data)
                         }
                     <p>Save Number: <span>{data[0]}</span></p>
-                    <LoadGameList loadGame = {data}/>
+                    <LoadGameList 
+                        setStoreCombinedArray = {props.setStoreCombinedArray}
+                        loadGame = {data}
+                    />
                     {/* <p>{data[1]}</p> */}
               {/* <button onClick={() => { handleRemoveMovie(data.id) }}>Remove Movie</button> */}
                     </li>

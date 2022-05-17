@@ -22,7 +22,9 @@ const Dropdown = (props) => {
 
   return (
     <div>
-      <DisplayDropdown getCategory={dropdown} setCombinedArray={props.setCombinedArray} />
+      <DisplayDropdown getCategory={dropdown}
+        storeCombinedArray={props.storeCombinedArray}
+        setCombinedArray={props.setCombinedArray} />
     </div>
   );
 };

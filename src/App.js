@@ -17,7 +17,8 @@ const App = () => {
   const [ score, setScore ] = useState(['']);
   const [ combinedArray, setCombinedArray ] = useState([]);
   const [ questionList, setQuestionList ] = useState([]);
-  
+  const [ storeCombinedArray, setStoreCombinedArray] = useState([])
+
   return (
     <div className="App">
       <Header />
@@ -25,7 +26,10 @@ const App = () => {
       <main>
         <div className="wrapper">
           <section className="questionHandlingSection">
-            <Dropdown setCombinedArray={setCombinedArray}/>
+            <Dropdown 
+              storeCombinedArray={storeCombinedArray}
+              setCombinedArray=
+              {setCombinedArray}/>
             {/* REMOVE CONSOLE LOG */}
             {console.log("combinedArray in App.js to be passed to SaveGame", combinedArray)}
           </section>
@@ -43,7 +47,10 @@ const App = () => {
             />
             </div>
             <div className="loadGame">
-              <LoadGame />
+              <LoadGame
+                setStoreCombinedArray = { setStoreCombinedArray }
+              />
+              {console.log("storeCombinedArray:", storeCombinedArray)}
             </div>
           </section>
         </div>
