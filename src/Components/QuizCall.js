@@ -76,15 +76,15 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
                       // key={question.question} 
                       >
                         <input 
-                        id={decodeURIComponent(questionAnswer)} 
+                        id={`${decodeURIComponent(questionAnswer.toString())}-id`}
                         name="answer" 
                         type="radio"
                         // onChange = { value } 
                         />
                         <label 
-                        htmlFor={decodeURIComponent(questionAnswer)}
+                        htmlFor={`${decodeURIComponent(questionAnswer.toString())}-id`}
                         >
-                          {decodeURIComponent(questionAnswer)}
+                          ❓ CHOICE: {decodeURIComponent(questionAnswer.toString())} ❔
                         </label>
                       </li>
                     )
