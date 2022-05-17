@@ -26,7 +26,8 @@ const App = () => {
         <div className="wrapper">
           <section className="questionHandlingSection">
             <Dropdown setCombinedArray={setCombinedArray}/>
-            {console.log("combined array in App.js", combinedArray)}
+            {/* REMOVE CONSOLE LOG */}
+            {console.log("combinedArray in App.js to be passed to SaveGame", combinedArray)}
           </section>
 
           <section className="gameHandlingSect">

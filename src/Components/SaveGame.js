@@ -33,7 +33,8 @@ const SaveGame = (props)=>{
           alert("Please make a selection")
         }
     }
-    console.log(props.combinedArray)
+    // REMOVE CONSOLE LOG
+    console.log("combinedArray to be saved in SaveGame", props.combinedArray)
 
     return (
         <div className="saveButton">
