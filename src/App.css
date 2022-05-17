@@ -73,7 +73,7 @@ button {
   margin-top: 25px;
 }
 
-button:hover
+button:hover,
 button:focus {
   background-color: #AFEDFF;
   transition: 1s;
