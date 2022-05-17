@@ -2,7 +2,6 @@
 import firebase from '../firebase';
 // Modules
 import { getDatabase, ref, push } from 'firebase/database';
-import React, { useEffect, useState } from "react";
 
 /* Save game button:
 I) What does it record?
