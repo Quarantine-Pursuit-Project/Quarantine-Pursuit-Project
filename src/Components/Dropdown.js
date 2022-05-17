@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 // Components
 import DisplayDropdown from "./DisplayDropdown";
 
-const Dropdown = () => {
+const Dropdown = (props) => {
   const [dropdown, setDropdown] = useState([]);
 
   // API call with category endpoint
@@ -22,7 +22,7 @@ const Dropdown = () => {
 
   return (
     <div>
-      <DisplayDropdown getCategory={dropdown} />
+      <DisplayDropdown getCategory={dropdown} setCombinedArray={props.setCombinedArray} />
     </div>
   );
 };

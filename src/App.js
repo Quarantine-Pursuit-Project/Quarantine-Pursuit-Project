@@ -15,14 +15,13 @@ import "./App.css";
 const App = () => {
   
   const [ score, setScore ] = useState(['']);
-  const [ currentQuestion, setCurrentQuestion ] = useState('');
+  const [ combinedArray, setCombinedArray ] = useState([]);
   const [ questionList, setQuestionList ] = useState([]);
 
   // REMOVE TEST
   const testFunction = ()=>{
     return (
       setScore('5'),
-      setCurrentQuestion('6'),
       setQuestionList([
         {
           numberOfQuestion: "10",
@@ -36,13 +35,13 @@ const App = () => {
   
   return (
     <div className="App">
-
+      {console.log("combined array in App.js", combinedArray)}
       <Header />
 
       <main>
         <div className="wrapper">
           <section className="questionHandlingSection">
-            <Dropdown />
+            <Dropdown setCombinedArray={setCombinedArray}/>
           </section>
 
           <section className="gameHandlingSect">
@@ -52,8 +51,8 @@ const App = () => {
             <SaveGame 
               score = { score }
               setScore = { setScore }
-              currentQuestion = { currentQuestion }
-              setCurrentQuestion = { setCurrentQuestion }
+              // currentQuestion = { currentQuestion }
+              // setCurrentQuestion = { setCurrentQuestion }
               questionList = { questionList }
               setQuestionList = { setQuestionList }
               // REMOVE TEST

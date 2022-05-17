@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // Components
 import QuizCall from "./QuizCall";
 
-const DisplayDropdown = ({ getCategory }) => {
+const DisplayDropdown = ({ getCategory, setCombinedArray }) => {
   // Declaring state variables to store user selected values from dropdown in state
   const [category, setCategory] = useState();
   const [questionCount, setQuestionCount] = useState();
@@ -87,7 +87,8 @@ const DisplayDropdown = ({ getCategory }) => {
           </select>
         </form>
       </div>
-      <QuizCall 
+      <QuizCall
+        setCombinedArray = {setCombinedArray} 
         questionCount = { questionCount } 
         category = { category }
       />

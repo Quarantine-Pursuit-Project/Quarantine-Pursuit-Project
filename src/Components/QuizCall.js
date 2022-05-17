@@ -1,32 +1,35 @@
 // Config
+import { async } from "@firebase/util";
 import axios from "axios";
 // Modules
 import React, { useEffect, useState } from "react";
 // Components
 import DisplayDropdown from "./DisplayDropdown";
 
-const QuizCall = ({ category, questionCount }) => {
+const QuizCall = ({ category, questionCount, setCombinedArray }) => {
 
   const [questionDetail, setQuestionDetail] = useState([])
+  const [chooseCategory, setChooseCategory] = useState(false)
 
   useEffect(() => {
-    axios({
-      url: `https://opentdb.com/api.php?`,
-      method: "GET",
-      dataResponse: "json",
-      params: {
-        amount: questionCount,
-        category: category,
-        type: "multiple",
-        encode: "url3986"
-      }
-    }).then((response) => {
-
-      const responseData = response.data.results
-      setQuestionDetail(responseData)
-
-    })
-  }, [category, questionCount]);
+    if (chooseCategory)
+    {
+      axios({
+        url: `https://opentdb.com/api.php?`,
+        method: "GET",
+        dataResponse: "json",
+        params: {
+          amount: questionCount,
+          category: category,
+          type: "multiple",
+          encode: "url3986"
+        }
+      }).then((response) => {
+        const responseData = response.data.results
+        setQuestionDetail(responseData)
+      })
+    }
+  }, [chooseCategory]);
 
   console.log("questionDetail",questionDetail)
 
@@ -47,8 +50,28 @@ const QuizCall = ({ category, questionCount }) => {
 
   console.log("combined array", combinedArray)
 
+
+  const tempArray = new Array(...combinedArray)
+  console.log("any difference here?", tempArray)
+      
+  const handleCategoryConfirm = (e) => {
+    e.preventDefault()
+    setChooseCategory(true)
+  }
+
+  const handleCombineArray = async () => {
+    setCombinedArray(tempArray)
+    console.log("tempArray", tempArray)
+  }
+
   return (
     <div>
+      <button onClick= {(e) => {
+        handleCategoryConfirm(e);
+        // handleCombineArray();
+      }}
+      >Submit your selection!</button>
+      <button onClick={handleCombineArray}>Start Quiz</button>
         {
           combinedArray.map((question) => {
             return(
@@ -62,7 +85,8 @@ const QuizCall = ({ category, questionCount }) => {
                     )
                   })
                 }
-                    </form>
+                  </form>
+
               </>
             )
           })

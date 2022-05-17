@@ -18,29 +18,33 @@ import LoadGameList from './LoadGameList';
 const LoadGame = ()=>{
     const [data, setData] = useState([])
     // unsure of what loadList is accomplishing
-    const [loadList, setLoadList] = useState()
+    const [loadList, setLoadList] = useState(false)
 
     useEffect(() => {
         const database = getDatabase(firebase)
         const dbRef = ref(database)
 
-        onValue(dbRef, (response) => {
-            const newState= []
-
-            // < list of saved games components />
-            const testData = response.val()
-
-            for (let key in testData) {
-                newState.push(testData[key])
-            }
-
-            setData(newState)
-        })
+        if (loadList) {
+            onValue(dbRef, (response) => {
+                const newState= []
+    
+                // < list of saved games components />
+                const testData = response.val()
+    
+                for (let key in testData) {
+                    // newState.push(testData[key])
+                    newState.push(
+                        [key, testData[key]]
+                    )
+                }
+    
+                setData(newState)
+            })
+        }
     }, [loadList])
 
-    const handleSaveListDisplay = (e)=>{
+    const handleLoadListState = (e)=>{
         e.preventDefault()
-
         return(
             setLoadList(true)
         )
@@ -50,12 +54,23 @@ const LoadGame = ()=>{
         <div className='loadGameSection'>
             <div>
                 <div className='loadGame'>
-                    <button onClick={(e)=>{handleSaveListDisplay(e)}}>LOAD GAME</button>
+                    <button onClick={(e)=>{handleLoadListState(e)}}>LOAD GAME</button>
                 </div>
-                <LoadGameList loadGame={data}/>
             </div>
             <ul>
-
+            { data.map((data) => {
+                return (
+                    <li key={data[0]}>
+                        {
+                            console.log(data)
+                        }
+                    <p>Save Number: <span>{data[0]}</span></p>
+                    <LoadGameList loadGame = {data}/>
+                    {/* <p>{data[1]}</p> */}
+              {/* <button onClick={() => { handleRemoveMovie(data.id) }}>Remove Movie</button> */}
+                    </li>
+                )
+        }) }
             </ul>
         </div>
     );
