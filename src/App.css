@@ -88,7 +88,8 @@ input[type="radio"] {
 }
 
 label {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   background-color: #9BD694;
   padding: 10px 50px;
   border-radius: 5px;
