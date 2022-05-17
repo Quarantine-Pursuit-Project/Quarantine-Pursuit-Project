@@ -57,7 +57,48 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
     }
   }
 
-// if setStoreCategoryArray is not EMPTY, display whatever user selected
+  // code for userValue and counter below
+  // 1) store all correct answers returned in an array
+  const [storeCorrectAnswer, setStoreCorrectAnswer] = useState()
+  const [counter, setCounter] = useState(0)
+  const [disable, setDisable] = useState(false)
+
+  const correctAnswer = questionDetail.map((test) => {
+    return decodeURIComponent(test.correct_answer)
+  })
+
+  // 2) get user selected value by targeting e.target.value 
+  const userAnswerSelection = (e) => {
+    const userAnswer = e.target.value
+    setStoreCorrectAnswer(userAnswer)
+    console.log("user selection is:"
+    , userAnswer)
+  }
+
+  // 3) OnClick function that checks if user selected value is within correct answer array (the button can be clicked multiple time - so assumption is the user answers each question sequentially)
+  const checkCorrectAnswer = (e) => {
+    e.preventDefault()
+    // right now, disabled ALL buttons for future questions when clicked - commenting out for now
+    // setDisable(true)
+
+    if (correctAnswer.indexOf(storeCorrectAnswer) > -1) {
+        setCounter(counter + 1)
+        console.log("hell ya") }
+    else {
+        console.log("incorrect answer")
+        console.log(storeCorrectAnswer)
+    }
+}
+
+  console.log("counter is now:", counter)
+
+  const finalScore = (e) => {
+      e.preventDefault()
+      return(
+          alert(`You scored ${counter}/${questionCount}!!`)
+      )
+  }
+
   return (
     <div>
       <button 
@@ -83,7 +124,8 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
                         id={`${question.key}${decodeURIComponent(questionAnswer)}-id`}
                         name="answer" 
                         type="radio"
-                        // onChange = { value } 
+                        value={decodeURIComponent(questionAnswer)}
+                        onChange={userAnswerSelection} 
                         />
                         <label 
                         htmlFor={`${question.key}${decodeURIComponent(questionAnswer)}-id`}
@@ -94,15 +136,17 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
                     )
                   })
                 }
-                <button 
-                // onClick={(e)=>{ handleCheckAnswer(e)} }
+                <button
+                  // disabled={disable} 
+                  onClick={checkCorrectAnswer}
                 >Confirm choice</button>
               </form>
             </>
           )
         })
       }
-      <button className="submitButton">Submit Quiz!</button>
+      <button className="submitButton"
+      onClick={finalScore}>Submit Quiz!</button>
     </div>
   );
 }
