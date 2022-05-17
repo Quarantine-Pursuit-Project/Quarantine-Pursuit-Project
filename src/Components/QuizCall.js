@@ -53,6 +53,8 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
     setCombinedArray([...combinedArray])
   }
 
+  console.log(displayArray.choices)
+
   return (
     <div>
       <button 
@@ -75,12 +77,12 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
                       // key={question.question} 
                       >
                         <input 
-                        id={decodeURIComponent(questionAnswer)} 
+                        id={`${question.key}${decodeURIComponent(questionAnswer)}`} 
                         name="answer" 
                         type="radio" 
                         />
                         <label 
-                        htmlFor={decodeURIComponent(questionAnswer)}
+                          htmlFor={`${question.key}${decodeURIComponent(questionAnswer)}`}
                         >
                           {decodeURIComponent(questionAnswer)}
                         </label>
