@@ -54,7 +54,6 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
     setCombinedArray([...combinedArray])
   }
 
-  console.log(displayArray.choices)
 
   return (
     <div>
@@ -86,6 +85,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
                         <label 
                           htmlFor={`${question.key}${decodeURIComponent(questionAnswer)}`}
                         >
+                          {decodeURIComponent(questionAnswer)}
                         </label>
                       </li>
                     )
