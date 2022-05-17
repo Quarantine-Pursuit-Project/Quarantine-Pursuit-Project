@@ -68,7 +68,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
           return(
             <>
               <h2>{decodeURIComponent(question.question)}</h2>
-              <form>
+              <form className="choicesWrapper">
                 {
                   question.choices.map((questionAnswer) => {
                     return(

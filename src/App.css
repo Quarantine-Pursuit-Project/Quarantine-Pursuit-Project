@@ -110,6 +110,11 @@ input[type="radio"]:focus + label {
   border: 2px dashed black;
 }
 
+/* Multiple choice answers section */
+.choicesWrapper {
+  height: 300px;
+}
+
 /* media queries */
 
 @media (max-width: 540px) {
