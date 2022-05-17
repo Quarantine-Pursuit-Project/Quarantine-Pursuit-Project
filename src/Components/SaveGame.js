@@ -32,6 +32,7 @@ const SaveGame = (props)=>{
           alert("Please make a selection")
         }
     }
+    console.log(props.combinedArray)
     // REMOVE TEST
     const handleTest = ()=>{
         props.testFunction();

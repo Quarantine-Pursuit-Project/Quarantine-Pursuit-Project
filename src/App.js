@@ -35,13 +35,13 @@ const App = () => {
   
   return (
     <div className="App">
-      {console.log("combined array in App.js", combinedArray)}
       <Header />
 
       <main>
         <div className="wrapper">
           <section className="questionHandlingSection">
             <Dropdown setCombinedArray={setCombinedArray}/>
+            {console.log("combined array in App.js", combinedArray)}
           </section>
 
           <section className="gameHandlingSect">
