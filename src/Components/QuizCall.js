@@ -9,7 +9,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
   const [questionDetail, setQuestionDetail] = useState([])
   const [displayArray, setDisplayArray] = useState([])
 
-  // Fire the API call when user have finished choosing BOTH of the dropdown lists - NOT DISPLAYING the game yet.
+  // Fire the API call whenever user have finished choosing BOTH of the dropdown lists - NOT DISPLAYING the game yet.
   useEffect(() => {
       axios({
         url: `https://opentdb.com/api.php?`,
@@ -45,24 +45,23 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
 
   const handleCategoryConfirm = (e, callBack)=>{
     e.preventDefault();
-    // setChooseCategory(true);
     callBack();
   }
-
-  const handleAssignArray = ()=>{
+  // Pass the data of the combinedArray (reconstruct array) in two directions: to the return of this component to be displayed AND back to the main App.js to be used in SaveGame
+  const handleArrayAssignment = ()=>{
     setDisplayArray([...combinedArray])
     setCombinedArray([...combinedArray])
   }
 
   return (
     <div>
-      <button onClick= { (e)=>{ handleCategoryConfirm(e, handleAssignArray) } }>
+      <button onClick= { (e)=>{ handleCategoryConfirm(e, handleArrayAssignment) } }>
         Confirm
       </button>
-        {
-          displayArray.map((question) => {
-            return(
-              <>
+      {
+        displayArray.map((question) => {
+          return(
+            <>
               <h2>{decodeURIComponent(question.question)}</h2>
               <form>
                 {
@@ -85,17 +84,14 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
                     )
                   })
                 }
-                  </form>
-
-              </>
-            )
-          })
-        }
+              </form>
+            </>
+          )
+        })
+      }
       <button className="submitButton">Submit Quiz!</button>
-
     </div>
   );
-
 }
 
 export default QuizCall;
