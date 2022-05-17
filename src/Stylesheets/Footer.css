@@ -63,13 +63,4 @@ footer {
   color: black;
 }
 
-@media (max-width: 540px) {
-  .title {
-    font-size: 2.5rem;
-  }
 
-  select {
-    padding: 5px 5px;
-    font-size: 0.5rem;
-  }
-}
