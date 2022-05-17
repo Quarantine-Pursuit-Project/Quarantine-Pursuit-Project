@@ -12,7 +12,7 @@ const LoadGameList = (props) => {
     })
 
     return(
-        <button>load this game</button>
+        <button>Load</button>
     )
 
     // for each data point saved (aka each saved game in firebase) create a button that:

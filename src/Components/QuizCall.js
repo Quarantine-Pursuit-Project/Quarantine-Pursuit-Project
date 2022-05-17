@@ -39,7 +39,8 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
       key: index,
       question: question.question,
       choices: allChoice,
-      goodChoice: goodChoice
+      goodChoice: goodChoice,
+      score: 0
     }
   })
 
@@ -62,7 +63,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
         handleCategoryConfirm(e, 
         handleArrayAssignment) 
       }}>
-        Confirm
+        Confirm selections
       </button>
       {
         displayArray.map((question) => {
@@ -79,17 +80,20 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
                         <input 
                         id={`${question.key}${decodeURIComponent(questionAnswer)}`} 
                         name="answer" 
-                        type="radio" 
+                        type="radio"
+                        // onChange = { value } 
                         />
                         <label 
                           htmlFor={`${question.key}${decodeURIComponent(questionAnswer)}`}
                         >
-                          {decodeURIComponent(questionAnswer)}
                         </label>
                       </li>
                     )
                   })
                 }
+                <button 
+                // onClick={(e)=>{ handleCheckAnswer(e)} }
+                >Confirm choice</button>
               </form>
             </>
           )

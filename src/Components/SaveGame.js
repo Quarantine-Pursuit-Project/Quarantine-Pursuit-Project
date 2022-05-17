@@ -2,7 +2,6 @@
 import firebase from '../firebase';
 // Modules
 import { getDatabase, ref, push } from 'firebase/database';
-import React, { useEffect, useState } from "react";
 
 /* Save game button:
 I) What does it record?
@@ -33,7 +32,8 @@ const SaveGame = (props)=>{
           alert("Please make a selection")
         }
     }
-    console.log(props.combinedArray)
+    // REMOVE CONSOLE LOG
+    console.log("combinedArray to be saved in SaveGame", props.combinedArray)
 
     return (
         <div className="saveButton">
