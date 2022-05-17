@@ -17,21 +17,6 @@ const App = () => {
   const [ score, setScore ] = useState(['']);
   const [ combinedArray, setCombinedArray ] = useState([]);
   const [ questionList, setQuestionList ] = useState([]);
-
-  // REMOVE TEST
-  const testFunction = ()=>{
-    return (
-      setScore('5'),
-      setQuestionList([
-        {
-          numberOfQuestion: "10",
-          numberOfRightAnswer: "1"},
-        {
-          numberOfQuestion: "5",
-          numberOfRightAnswer: "1"}    
-      ])
-    )
-  }
   
   return (
     <div className="App">
@@ -52,12 +37,8 @@ const App = () => {
               combinedArray = { combinedArray }
               score = { score }
               setScore = { setScore }
-              // currentQuestion = { currentQuestion }
-              // setCurrentQuestion = { setCurrentQuestion }
               questionList = { questionList }
               setQuestionList = { setQuestionList }
-              // REMOVE TEST
-              testFunction = { testFunction }
             />
             </div>
             <div className="loadGame">
