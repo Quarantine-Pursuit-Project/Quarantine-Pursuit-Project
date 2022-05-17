@@ -1,6 +1,5 @@
 // Config
 // Modules
-import React, { useEffect, useState } from "react";
 // Components
 // Stylings
 import "../Stylesheets/Footer.css";
@@ -29,16 +28,16 @@ const Footer = ()=>{
                         <a href="https://www.linkedin.com/in/faheen-jean-pierre/"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
 
-                
                     <div className="individualContainer">
                         <p>Antoine:</p> 
                         <a href="https://github.com/antoine-duong"><i className="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/tuananh-duong/"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
+                    
                     <div className="individualContainer">
                         <p>Kyler:</p> 
                         <a href="https://github.com/KylerJung"><i className="fa-brands fa-github"></i></a>
-                        <a href=""><i className="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/kyler-jung/"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>

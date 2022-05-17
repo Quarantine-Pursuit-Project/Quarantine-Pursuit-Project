@@ -1,6 +1,5 @@
 // Config
 // Modules
-import React, { useEffect, useState } from "react";
 // Components
 // Stylings
 import "../Stylesheets/Header.css"
@@ -11,7 +10,6 @@ const Header = ()=>{
             <div className="wrapper">
                 <h1 className="title">Quarantine Pursuit</h1>
                 {/* Credit to Alvaro (https://codepen.io/alvarotrigo/pen/dyzxgOO) for the animation styling on the H1! */}
-
                 <h3>please choose a category + number of questions to begin!</h3>
             </div>
         </header>

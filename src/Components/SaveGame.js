@@ -30,7 +30,7 @@ const SaveGame = (props)=>{
             // Adding new save to our firebase db
             push(dbRef, userSaveInfo);
         } else {
-          alert("Please make a selection")
+            alert("Please make a selection")
         }
     }
     // REMOVE CONSOLE LOG
