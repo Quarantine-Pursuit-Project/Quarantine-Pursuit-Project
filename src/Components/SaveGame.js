@@ -26,22 +26,18 @@ const SaveGame = (props)=>{
         const dbRef = ref(database);
         
         if(props.score || props.combinedArray){
+            e.preventDefault();
             // Adding new save to our firebase db
             push(dbRef, userSaveInfo);
         } else {
           alert("Please make a selection")
         }
     }
-    // REMOVE TEST
-    const handleTest = ()=>{
-        props.testFunction();
-    }
+    console.log(props.combinedArray)
 
     return (
         <div className="saveButton">
-            {/* REMOVE TEST */}
-            <button onClick={()=>{handleTest()}}>TEST</button>
-            <button onClick={()=>{handleUserSave()}}>SAVE GAME</button>
+            <button onClick={(e)=>{handleUserSave(e)}}>SAVE GAME</button>
         </div>
 
     );

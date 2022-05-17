@@ -1,6 +1,5 @@
 // Config
 // Modules
-import React, { useEffect, useState } from "react";
 // Components
 // Stylings
 import "../Stylesheets/Header.css"

@@ -1,6 +1,5 @@
 // Config
 // Modules
-import React, { useEffect, useState } from "react";
 // Components
 
 const NewGame = () => {
