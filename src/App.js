@@ -49,6 +49,7 @@ const App = () => {
             <div className='saveGame'>
             {/* Communicate with firebase in this component */}
             <SaveGame 
+              combinedArray = { combinedArray }
               score = { score }
               setScore = { setScore }
               // currentQuestion = { currentQuestion }

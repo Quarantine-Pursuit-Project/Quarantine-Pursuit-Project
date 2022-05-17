@@ -50,7 +50,6 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
 
   console.log("combined array", combinedArray)
 
-
   const tempArray = new Array(...combinedArray)
   console.log("any difference here?", tempArray)
       

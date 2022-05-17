@@ -18,14 +18,14 @@ II) How does it store it in the Firebase (data structure)?
 const SaveGame = (props)=>{
     const userSaveInfo = [
         props.score, 
-        props.questionList
+        props.combinedArray
     ]
     const handleUserSave = (e)=>{
         // Creating ref to the db
         const database = getDatabase(firebase);
         const dbRef = ref(database);
         
-        if(props.score || props.questionList){
+        if(props.score || props.combinedArray){
             // Adding new save to our firebase db
             push(dbRef, userSaveInfo);
         } else {
