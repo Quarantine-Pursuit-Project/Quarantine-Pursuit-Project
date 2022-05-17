@@ -24,7 +24,7 @@ const Footer = ()=>{
 
                     <div className="individualContainer">
                         <p>FJ:</p>
-                        <a href="https://github.com/FjPierre"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/FjPierre"><i className="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/faheen-jean-pierre/"><i className="fa-brands fa-linkedin"></i></a>
                     </div>
 

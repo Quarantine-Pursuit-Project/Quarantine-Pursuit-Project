@@ -55,7 +55,11 @@ const QuizCall = ({ category, questionCount, setCombinedArray }) => {
 
   return (
     <div>
-      <button onClick= { (e)=>{ handleCategoryConfirm(e, handleArrayAssignment) } }>
+      <button 
+      onClick = {(e)=>{ 
+        handleCategoryConfirm(e, 
+        handleArrayAssignment) 
+      }}>
         Confirm
       </button>
       {
