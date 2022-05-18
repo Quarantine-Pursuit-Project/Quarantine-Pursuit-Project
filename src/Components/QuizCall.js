@@ -40,7 +40,9 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
       question: question.question,
       choices: allChoice,
       goodChoice: goodChoice,
-      score: 0
+      score: 0,
+      disabledButton: question.key,
+      clicked: true
     }
   })
 
@@ -106,7 +108,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
         handleCategoryConfirm(e, 
         handleArrayAssignment) 
       }}>
-        Confirm selections
+        Confirm Selections
       </button>
       {
         displayArray.map((question) => {
