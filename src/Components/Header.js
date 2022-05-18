@@ -1,4 +1,5 @@
 // Config
+import React from "react";
 // Modules
 // Components
 // Stylings
