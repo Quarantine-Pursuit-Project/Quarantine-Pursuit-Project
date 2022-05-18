@@ -1,8 +1,8 @@
 // Config
 import firebase from '../firebase';
 // Modules
-import { getDatabase, ref, push, onValue } from 'firebase/database';
-import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from 'firebase/database';
+import React, { useState } from "react";
 
 const LoadGameList = (props) => {
     const[loadGameArray, setLoadGameArray] = useState([])

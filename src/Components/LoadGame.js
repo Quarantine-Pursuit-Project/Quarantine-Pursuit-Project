@@ -1,7 +1,7 @@
 // Config
 import firebase from '../firebase';
 // Modules
-import { getDatabase, ref, push, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 import React, { useEffect, useState } from "react";
 import LoadGameList from './LoadGameList';
 // import loadgameList ()

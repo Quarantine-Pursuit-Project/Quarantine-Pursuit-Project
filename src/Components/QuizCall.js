@@ -131,7 +131,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
                         <label 
                         htmlFor={`${question.key}${decodeURIComponent(questionAnswer)}-id`}
                         >
-                          <span className="leftMarking">❓</span> {decodeURIComponent(questionAnswer)} <span className="rigtMarking">❔</span>
+                          <span role="img" aria-label="red question mark" className="leftMarking">❓</span> {decodeURIComponent(questionAnswer)} <span role="img" aria-label="white question mark"className="rigtMarking">❔</span>
                         </label>
                       </li>
                     )
