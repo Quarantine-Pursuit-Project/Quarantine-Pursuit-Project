@@ -1,38 +1,152 @@
 .App {
   text-align: center;
+  font-size: 125%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  font-family: "Barlow", sans-serif;
+  background-color: #9BD694;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.questionHandlingSection {
+  padding: 50px 0;
+  background-color: #9BD694;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  list-style: none;
+}
+
+.loadGameSection ul {
+  margin: 0;
+}
+
+.gameHandlingSect {
+  padding-bottom: 50px;
+}
+
+select {
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+/* dropdowns */
+
+select {
+  background-color: #AFEDFF;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 30px;
+  box-shadow: 5px 5px 0 black;
+  font-size: 1.1rem;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+/* buttons */
+
+button {
+  padding: 0;
+  margin: 5px;
+  width: 150px;
+  height: 50px;
+  font-size: 1.1rem;
+  background-color: #FFB0C6;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 0 black;
+  cursor: pointer;
+}
+
+.submitButton {
+  margin-top: 25px;
+}
+
+button:hover,
+button:focus {
+  background-color: #AFEDFF;
+  transition: 1s;
+}
+
+/* radio button */
+
+input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+label {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: #9BD694;
+  padding: 10px 50px;
+  border-radius: 25px;
+  margin: 5px 0;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="radio"]:hover + label {
+  background-color: #FFB0C6;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input[type="radio"]:checked + label {
+  background-color: #FFB0C6;
+  box-shadow: 5px 5px 0 black;
+}
+
+input[type="radio"]:focus + label {
+  border: 2px dashed black;
+}
+
+/* Multiple choice answers section */
+.choicesWrapper {
+  height: 300px;
+  background-color: #AFEDFF;
+  border-radius: 15px;
+  overflow: hidden
+}
+
+.choicesWrapper li,
+.choicesWrapper label {
+  background-color: #AFEDFF;
+}
+
+
+/* media queries */
+
+@media (max-width: 540px) {
+  .title {
+    font-size: 2.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  select {
+    padding: 5px 5px;
+    font-size: 1rem;
+  }
+
+  .wrapper {
+    width: 95%;
   }
 }
+
+@media (max-width: 380px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  select {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
