@@ -51,7 +51,7 @@ const DisplayDropdown = ({ getCategory, setCombinedArray, storeCombinedArray }) 
             {getCategory.map((category) => {
               const { name, id } = category;
               return (
-                <option value={id} id={id} key={id}>
+                <option value={id} id={id} key={`${id}-category`}>
                   {name}
                 </option>
               );
@@ -79,7 +79,7 @@ const DisplayDropdown = ({ getCategory, setCombinedArray, storeCombinedArray }) 
             {numberArray.map((numberDisplay) => {
               const { number } = numberDisplay;
               return (
-                <option value={number} id={number} key={number}>
+                <option value={number} id={number} key={`${number}-questCount`}>
                   {number}
                 </option>
               );

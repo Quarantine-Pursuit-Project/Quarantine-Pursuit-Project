@@ -113,13 +113,15 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
       {
         displayArray.map((question) => {
           return(
-            <>
+            <div key={`${question.key}-id`}>
               <h2>{decodeURIComponent(question.question)}</h2>
               <form  className="choicesWrapper">
                 {
                   question.choices.map((questionAnswer) => {
                     return(
-                      <li >
+                      <li 
+                      key={`${question.key}${decodeURIComponent(questionAnswer)}-id`} 
+                      >
                         <input 
                         id={`${question.key}${decodeURIComponent(questionAnswer)}-id`}
                         name="answer" 
@@ -141,7 +143,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
                   onClick={checkCorrectAnswer}
                 >Confirm choice</button>
               </form>
-            </>
+            </div>
           )
         })
       }
