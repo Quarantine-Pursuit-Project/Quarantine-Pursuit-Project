@@ -84,17 +84,17 @@ label {
   justify-content: space-between;
   background-color: #9BD694;
   padding: 10px 50px;
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 5px 0;
 }
 
 input[type="radio"]:hover + label {
-  background-color: #AFEDFF;
+  background-color: #FFB0C6;
   cursor: pointer;
 }
 
 input[type="radio"]:checked + label {
-  background-color: #AFEDFF;
+  background-color: #FFB0C6;
   box-shadow: 5px 5px 0 black;
 }
 
@@ -105,7 +105,16 @@ input[type="radio"]:focus + label {
 /* Multiple choice answers section */
 .choicesWrapper {
   height: 300px;
+  background-color: #AFEDFF;
+  border-radius: 15px;
+  overflow: hidden
 }
+
+.choicesWrapper li,
+.choicesWrapper label {
+  background-color: #AFEDFF;
+}
+
 
 /* media queries */
 
