@@ -54,7 +54,7 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
   const handleArrayAssignment = ()=>{
     setDisplayArray([...combinedArray])
     setCombinedArray([...combinedArray])
-    if (storeCombinedArray.length != 0) {
+    if (storeCombinedArray.length !== 0) {
       setDisplayArray([...storeCombinedArray])
     }
   }
@@ -63,7 +63,6 @@ const QuizCall = ({ category, questionCount, setCombinedArray, storeCombinedArra
   // 1) store all correct answers returned in an array
   const [storeCorrectAnswer, setStoreCorrectAnswer] = useState()
   const [counter, setCounter] = useState(0)
-  const [disable, setDisable] = useState(false)
 
   const correctAnswer = questionDetail.map((test) => {
     return decodeURIComponent(test.correct_answer)
